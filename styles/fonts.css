@@ -1,0 +1,15 @@
+@font-face {
+	font-family:  Ubuntu;
+	src:  url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+	font-family:  OpenSans;
+	src:  url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+	font-family:  OpenSans;
+	src:  url(../fonts/OpenSans/OpenSans-Bold.ttf);
+	font-weight: bold;
+}

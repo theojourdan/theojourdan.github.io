@@ -1,7 +1,414 @@
 <!DOCTYPE html>
 <html>
-   <body>
-      <a href="main.html"><center><img src="hello.png" width="60" height="29"></center></a>
+<head>
+  <meta name="google-site-verification" content="v5jvM1yEFbJco0EDePdyAC-h6F1jGA2LfCgdEXcGG-o" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo Jourdan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="" id="style-module">
+    <script src="js/jquery.min.js"></script>
+    <link rel="icon" href="images/vaza.png">
+</head>
 
-   </body>
+
+<body>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div id="col-desc">
+        <div id="images-holder">
+          <!-- <img id="photo-me" src="images/moko.png" onmouseover="this.src='images/real-pic.png'" onmouseout="this.src='images/moko.png'"> -->
+          <img id="photo-me" src="images/face1.png" >
+          <img id="photo-me2" src="images/face2.png" >
+          <img id="photo-me3" src="images/face3.png" >
+          <img id="photo-me4" src="images/face4.png" >
+
+      </div>
+        <h1 id="name">Théo<br/>Jourdan</h1>
+        <span class="email"><span class="hovertext emailtext" data-hover="email me!">jourdan[dot]theo[at]protonmail[dot]com</span></span><br/>
+        <span class="address">ISIR lab<br/>Sorbonne University<br/>Paris<br/>France</span>
+        <nav id="navbar">
+          <div><a id="about-link" href="#about">about</a></div>
+          <div><a id="projects-link" href="#projects">projects</a></div>
+          <div><a id="resume-link" href="#resume">resume</a></div>
+          <div><a id="pubs-link" href="#pubs">pubs</a></div>
+          <div><a id="misc-link" href="#misc">misc</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h2 id="about">about</h2>
+        
+    <div>I'm Postdoctoral fellow funded by the <a href="https://arcol.isir.upmc.fr">Arcol</a> project, in <a href="https://www.isir.upmc.fr/teams/acide/?lang=en">ACIDE team</a> part of the ISIR (Institut des Systèmes Intelligent et de Robotique) lab at Sorbonne University in Paris and member of the <a href="https://hci.isir.upmc.fr">HCI group</a> of the lab. With a PhD in Computer Science about privacy and transparency in machine learning used for rehabilitation with IMU sensors, my research now focuses on the study of <span class="regular-text"><span class="hovertext dot-under" data-hover="with a specific interest to creative use of sound synthesis model">machine learning technology</span></span> situated in human musical practices thanks to qualitative, quantitative, and practice-based methods. My research adopts a critical perspective on this technology, as a way to include socio-cultural, and inclusive dimensions of human musical expression.<br/>
+            <strong>+</strong> I'm into all kinds of maps and big <button id="color-button" onclick="changeBackground();"></button> circles.</div>
+        
+
+      <h2 id="projects">projects</h2>
+
+      <div class="row">
+        <div class="col-md-2"><img class="project-img" src="images/project1.jpg"></div>
+        <div class="col-md-10">
+    <div class="projects-item">
+
+      <a class="project-title" href="https://timeestimator.github.io">Time estimator</a>
+      <div>
+      <div class="project-desc">
+       An online tool that displays a predictive visualization of the duration of personalizable tasks.</div>
+       It was developed as a result of a study on predictive visualizations for estimates of task duration. For more details, you can read our <a href="https://hal.inria.fr/hal-03599998/document">paper</a> and <a href="https://osf.io/bwqkh/">pre-registeration on OSF</a>. You can also directly access the <a href="https://timeestimator.github.io/output.html">full results</a>.
+     </div>
+      <div class="paper">
+      Morgane Koval, Yvonne Jansen. <a class="paper-title" href="https://hal.inria.fr/hal-03599998/document">Do You See What You Mean? Using Predictive Visualizations to Reduce Optimism in Duration Estimates.</a> CHI 2022 - Conference on Human Factors in Computing Systems, Apr 2022, New Orleans, United States. <a href="https://doi.org/10.1145/3491102.3502010">DOI 10.1145/3491102.3502010</a>.<br/>
+      <em>Honorable mention</em>
+  </div>
+  <a class="bibs" href="files/Do_You_See_What_You_Mean.bib">Download BibTex citation.</a>
+  <div class="video"><iframe src="https://www.youtube.com/embed/_afuTkOMLys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+
+   
+  </div>
+    </div>
+
+  </div>
+      <h2 id="resume">resume</h2>
+
+  <div class="resume-cat">
+      <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt oddcat">experience</span>
+        </div>
+
+        <div class="col-md-11">
+
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">June-August 2023</span></div>
+            <div class="col-md-10"><span class="resume-title">Visiting Student</span> working on animated predictive visualizations, supervised by <a href="http://fannychevalier.net">Fanny Chevalier</a>. <br/> <a href="https://www.dgp.toronto.edu">DGP</a>, University of Toronto, ON, Canada.
+            </div>
+          </div>
+        </div>
+          
+          <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">March-August 2020</span></div>
+            <div class="col-md-10"><span class="resume-title">Internship</span> "Situated Personal Time Management", supervised by <a href="http://yvonnejansen.me">Yvonne Jansen</a>. <br/> <a href="https://www.isir.upmc.fr">ISIR</a>, Sorbonne University, France.
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="resume-cat">
+
+        <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt evencat">education</span>
+        </div>
+
+        <div class="col-md-11">
+          
+          <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">October 2020-</span></div>
+            <div class="col-md-10"><span class="resume-title">PhD Student</span> "Predictive Visualizations for Personal Decision Making", supervised by <a href="http://yvonnejansen.me">Yvonne Jansen</a>. <br/> <a href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-bordeaux">Inria Bordeaux Sud-Ouest</a>, Talence, France.
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2018-2020</span></div>
+            <div class="col-md-10"><span class="resume-title">MSc in Computer Science</span> Specialty: operations research and AI (robotics & decision support). <br/> <a href="https://sciences.sorbonne-universite.fr/formation-sciences/masters/master-informatique/parcours-androide">Sorbonne University</a>, Paris, France.
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2015-2018</span></div>
+            <div class="col-md-10"><span class="resume-title">BS in Mathematics</span>. <br/>
+            <span class="resume-title">BS in Information Technology</span>. <br/> <a href="http://www.math.univ-paris-diderot.fr/formations/licences/mathinfo2/index">Paris-Diderot University</a>, France.
+            </div>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-cat">
+      <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt oddcat">teaching</span>
+        </div>
+
+        <div class="col-md-11">
+          
+          <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">April-June 2023</span></div>
+            <div class="col-md-10"><span class="resume-title">C programming project</span> Students (3rd year) had to code an <a href="https://en.wikipedia.org/wiki/Game_of_the_Amazons">Amazon game</a> with different strategies (head of course: <a href="https://www.labri.fr/perso/renault/working/index.php">David Renault</a>). <br/> <a href="https://enseirb-matmeca.bordeaux-inp.fr/fr">Enseirb-Matmeca</a>, Talence, France.
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2022-2023</span></div>
+            <div class="col-md-10"><span class="resume-title">Object-oriented programming in Java</span> Students (4th year) had to submit a weekly report of their assigment and then their code at the end of the semester as a final project (head of course: Georges Eyrolles). <br/> <a href="https://enseirb-matmeca.bordeaux-inp.fr/fr">Enseirb-Matmeca</a>, Talence, France.
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">April 2022</span></div>
+            <div class="col-md-10"><span class="resume-title">Workshop for <a href="https://math-interactions.u-bordeaux.fr/Nos-projets-evenements/Moi-Informaticienne-Moi-Mathematicienne"> MIMM</a></span> As part of the "Moi Informaticienne, Moi Mathématicienne" week (yearly event), teenage girls from middle to high school attend different workshops to familiarize themselves with mathematics and computer science in more depth -- Workshop on the <a href="https://en.wikipedia.org/wiki/War_(card_game)">War/Battle card game</a> in Python (heads of project: <a href="https://www.labri.fr/perso/zeitoun/">Marc Zeitoun</a>, <a href="https://www.math.u-bordeaux.fr/~lweynans/">Lisl Weynans</a>, <a href="https://www.math.u-bordeaux.fr/~cmenini/">Chantal Menini</a>, <a href="https://www.math.u-bordeaux.fr/imb/fiche-personnelle?uid=jruch&lang=fr">Jean-Jacques Ruch</a>). <br/> <a href="https://www.u-bordeaux.fr">University of Bordeaux</a>, France.
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <h2 id="pubs">publications</h2>
+
+  <div class="pubs-cat">
+      <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt oddcat">Journals</span>
+        </div>
+
+        <div class="col-md-11">
+              
+        <div class="pubs-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2021</span></div>
+            <div class="col-md-10"><span class="resume-title">
+                T.Jourdan, N.Debs, C. Frindel <a class="paper-title" href="https://hal.inria.fr/hal-03599998/document">The Contribution of Machine Learning in the Validation of Commercial Wearable Sensors for Gait Monitoring in Patients: A Systematic Review.</a> Sensors. <a href="https://doi.org/10.3390/s21144808">DOI 10.3390/s21144808</a>.<br/>
+            </div>
+          </div>
+        </div>
+            
+        <div class="pubs-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2021</span></div>
+            <div class="col-md-10"><span class="resume-title">
+                T.Jourdan, N.Debs, C. Frindel <a class="paper-title" href="https://inria.hal.science/hal-02421854/file/main.pdf">Towards the protection of privacy in connected objects for health activity recognition (translated).</a> Revue des Sciences et Technologies de l’Information-Série TSI: Technique et Science Informatiques. <a href="https://inria.hal.science/hal-02421854">DOI 10.3166/RIA.28.1-27</a>.<br/>
+            </div>
+          </div>
+        </div>
+
+        <div class="pubs-item">
+          <div class="row">
+            <div class="col-md-2"><span class="resume-date">2020</span></div>
+            <div class="col-md-10"><span class="resume-title">
+                T.Jourdan, A.Boutet, A.Bahi, C.Frindel <a class="paper-title" href="https://inria.hal.science/hal-03045108/file/hal.pdf">Privacy-preserving IoT Framework for Activity Recognition in Personal Healthcare Monitoring.</a> ACM Transactions on Computing for Healthcare. <a href="https://doi.org/10.1145/3416947">DOI 10.1145/3416947</a>.<br/>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="pubs-cat">
+
+        <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt evencat">Conferences</span>
+        </div>
+
+        <div class="col-md-11">
+          
+          <div class="pubs-item">
+          <div class="row">
+            <div class="paper paper-pubs">
+                Yvonne Jansen, Federica Bucchieri, Pierre Dragicevic, Martin Hachet, Morgane Koval, Léana Petiot, Arnaud Prouzeau, Dieter Schmalstieg, Lijie Yao, Petra Isenberg. <a class="paper-title" href="https://inria.hal.science/hal-03770857/file/Envisioning_Situated_Visualizations_of_Environmental_Footprints.pdf">Envisioning Situated Visualizations of Environmental Footprints in an Urban Environment.</a> VIS4Good - Visualization for Social Good workshop held as part of IEEE VIS 2022, Oct 2022, Oklahoma City, United States. <a href="https://doi.org/10.5281/zenodo.7053934">DOI 10.5281/zenodo.7053934</a>.<br/>
+                <a class="bibs bibs-pubs" href="https://inria.hal.science/hal-03770857v1/bibtex">[Download BibTex citation]</a>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="pubs-cat">
+
+        <div class="row">
+        <div class="col-md-1">
+          <span class="vertical-txt oddcat">Workshops</span>
+        </div>
+
+        <div class="col-md-11">
+          
+          <div class="pubs-item">
+          <div class="row">
+            <div class="paper paper-pubs">
+                Morgane Koval, Yvonne Jansen. <a class="paper-title" href="https://inria.hal.science/hal-03770857/file/Envisioning_Situated_Visualizations_of_Environmental_Footprints.pdf">How to Visualize Food Quantities to Prevent Food Waste? Examples and Challenges.</a> VIS 2022 - IEEE VIsualization & Visual Analytics, Oct 2022, Oklahoma City, United States. <a href="https://inria.hal.science/hal-03832726">hal-03832726</a>.<br/>
+                <a class="bibs bibs-pubs" href="https://inria.hal.science/hal-03832726v1/bibtex">[Download BibTex citation]</a> <a class="bibs bibs-pubs" href="https://ieeevis.b-cdn.net/vis_2022/posters/v-vis-posters-1006.pdf">[Access Poster]</a>
+            </div>
+          </div>
+        </div>
+
+</div>
+    </div>
+
+    
+    </div>
+
+   
+
+
+   
+      <h2 id="misc">misc</h2>
+    <div>If you speak French, I can guess your <a href="https://morganekoval.github.io/niniv/">birthday</a>.</div>
+
+
+</div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
 </html>
+<script src="js/main.js?version=2"></script>
+<script>
+
+  let img1 = document.getElementById('photo-me');
+  let img2 = document.getElementById('photo-me2');
+  let img3 = document.getElementById('photo-me3');
+  let img3 = document.getElementById('photo-me4');
+
+  let all_imgs = [img1,img2,img3,img4];
+  for (let i = 1 ; i < all_imgs.length ; i++) {
+    all_imgs[i].style.visibility = 'hidden';
+  }
+  let imgholder = document.getElementById('images-holder');
+  let cnt = 0;
+
+  imgholder.addEventListener("mouseenter", changeCurrentImage, false);
+  // imgholder.addEventListener("mouseleave", changeCurrentImage, false);
+  // imgholder.addEventListener("onclick", changeCurrentImage, false);
+
+  function changeCurrentImage() {
+    cnt = (cnt+1)%all_imgs.length;
+    for (let i = 0 ; i < all_imgs.length ; i++) {
+      all_imgs[i].style.visibility = (cnt == i) ? 'visible' : 'hidden';
+    }
+    
+
+  }
+
+  function changeBackground() {
+    const colors = ["orange","pink","green"];
+
+    const button = document.getElementById("color-button");
+    const color = button.innerHTML;
+    
+    let new_color = "";
+    do {
+      new_color = colors[Math.floor(Math.random() * colors.length)];
+    } while (new_color === color);
+
+    button.innerHTML = new_color;
+
+    const rd1 = Math.random() * 20 + 40;
+    const rd2 = Math.random() * 45 + 15;
+    document.body.style.backgroundPosition = `${rd1}% ${rd2}%`;
+    document.getElementById("style-module").href = `./styles/module-${new_color}.css`;
+
+    // document.body.style.backgroundImage = `url(./images/bg_${new_color}.svg)`;
+
+  }
+
+
+  changeBackground();
+
+
+/**
+  let imgme = document.getElementById('photo-me');
+  let start = imgme.src;
+  let hover = imgme.getAttribute('data-hover');
+
+  imgme.onmouseover = () => { img.src = hover; }
+  imgme.onmouseout = () => { img.src = start; }**/
+
+// console.log(window.innerHeight);
+/**
+  console.log(window.innerWidth);
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+  var top_title = document.getElementById('name-top');
+  var about = document.getElementById('about');
+  var projects = document.getElementById('projects');
+
+function updateNav() {
+  if (isInViewport(top_title)) {
+    document.getElementById('about-link').className = "";
+    document.getElementById('projects-link').className = "";
+  } else if (isInViewport(about)) {
+    document.getElementById('about-link').className = "selected";
+    document.getElementById('projects-link').className = "";
+  } else if (isInViewport(projects)) {
+    document.getElementById('about-link').className = "";
+    document.getElementById('projects-link').className = "selected";
+  }
+}
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+  updateNav();
+}
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+**/
+
+
+</script>

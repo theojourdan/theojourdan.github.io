@@ -1,0 +1,15 @@
+body {
+	background-image: url(../images/bg_orange.svg);
+}
+
+h1 span:hover {
+  color: orange;
+}
+
+.bibs:hover{
+  color: orange;
+}
+
+.evencat{
+  background-color: orange;
+}

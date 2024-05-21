@@ -1,0 +1,15 @@
+body {
+	background-image: url(../images/bg_pink.svg);
+}
+
+h1 span:hover {
+  color: #F912B3;
+}
+
+.bibs:hover{
+  color: #F912B3;
+}
+
+.evencat{
+  background-color: #F912B3;
+}
