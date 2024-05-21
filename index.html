@@ -23,9 +23,11 @@
         <div id="images-holder">
           <!-- <img id="photo-me" src="images/moko.png" onmouseover="this.src='images/real-pic.png'" onmouseout="this.src='images/moko.png'"> -->
           <img id="photo-me" src="images/face1.png" >
-          <img id="photo-me2" src="images/face2.png" >
-          <img id="photo-me3" src="images/face3.png" >
-          <img id="photo-me4" src="images/face4.png" >
+
+          <img class="realpics" id="photo-me2" src="images/face2.png" >
+          <img class="realpics" id="photo-me3" src="images/face3.png" >
+          <img class="realpics" id="photo-me4" src="images/face4.png" >
+
 
       </div>
         <h1 id="name">Théo<br/>Jourdan</h1>
@@ -304,7 +306,7 @@
   let img1 = document.getElementById('photo-me');
   let img2 = document.getElementById('photo-me2');
   let img3 = document.getElementById('photo-me3');
-  let img3 = document.getElementById('photo-me4');
+  let img4 = document.getElementById('photo-me4');
 
   let all_imgs = [img1,img2,img3,img4];
   for (let i = 1 ; i < all_imgs.length ; i++) {
