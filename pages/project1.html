@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-site-verification" content="v5jvM1yEFbJco0EDePdyAC-h6F1jGA2LfCgdEXcGG-o" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo Jourdan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="" id="style-module">
+    <script src="js/jquery.min.js"></script>
+    <link rel="icon" href="images/vaza.png">
+</head>
+
+
+<body>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div id="col-desc">
+        <div id="images-holder">
+          <!-- <img id="photo-me" src="images/moko.png" onmouseover="this.src='images/real-pic.png'" onmouseout="this.src='images/moko.png'"> -->
+          <img id="photo-me" src="images/face1.png" >
+
+          <img class="realpics" id="photo-me2" src="images/face2.png" >
+          <img class="realpics" id="photo-me3" src="images/face3.png" >
+          <img class="realpics" id="photo-me4" src="images/face4.png" >
+
+
+      </div>
+        <h1 id="name">Théo<br/>Jourdan</h1>
+        <span class="email"><span class="hovertext emailtext" data-hover="email me!">jourdan[dot]theo[at]protonmail[dot]com</span></span><br/>
+        <span class="address">ISIR lab<br/>Sorbonne University<br/>Paris<br/>France</span>
+        <nav id="navbar">
+          <div><a id="about-link" href="#about">about</a></div>
+          <div><a id="projects-link" href="#projects">projects</a></div>
+          <div><a id="resume-link" href="#resume">resume</a></div>
+          <div><a id="pubs-link" href="#pubs">pubs</a></div>
+          <div><a id="misc-link" href="#misc">misc</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="col-md-8">     
+
+      <h2 id="projects">project 1</h2>
+
+      <div class="row">
+        <div class="col-md-2"><img class="project-img" src="images/project1.jpg"></div>
+        <div class="col-md-10">
+    <div class="projects-item">
+
+      <a class="project-title" href="https://timeestimator.github.io">Emergence of a context for musicking: a case study with non-verbal children
+with autistic spectrum disorder</a>
+      <div>
+      <div class="project-desc">
+       This project is ....
+     </div>
+
+
+
+   
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
+<script src="js/main.js?version=2"></script>
+<script>
+
+  let img1 = document.getElementById('photo-me');
+  let img2 = document.getElementById('photo-me2');
+  let img3 = document.getElementById('photo-me3');
+  let img4 = document.getElementById('photo-me4');
+
+  let all_imgs = [img1,img2,img3,img4];
+  for (let i = 1 ; i < all_imgs.length ; i++) {
+    all_imgs[i].style.visibility = 'hidden';
+  }
+  let imgholder = document.getElementById('images-holder');
+  let cnt = 0;
+
+  imgholder.addEventListener("mouseenter", changeCurrentImage, false);
+  // imgholder.addEventListener("mouseleave", changeCurrentImage, false);
+  // imgholder.addEventListener("onclick", changeCurrentImage, false);
+
+  function changeCurrentImage() {
+    cnt = (cnt+1)%all_imgs.length;
+    for (let i = 0 ; i < all_imgs.length ; i++) {
+      all_imgs[i].style.visibility = (cnt == i) ? 'visible' : 'hidden';
+    }
+    
+
+  }
+
+  function changeBackground() {
+    const colors = ["orange","pink","green"];
+
+    const button = document.getElementById("color-button");
+    const color = button.innerHTML;
+    
+    let new_color = "";
+    do {
+      new_color = colors[Math.floor(Math.random() * colors.length)];
+    } while (new_color === color);
+
+    button.innerHTML = new_color;
+
+    const rd1 = Math.random() * 20 + 40;
+    const rd2 = Math.random() * 45 + 15;
+    document.body.style.backgroundPosition = `${rd1}% ${rd2}%`;
+    document.getElementById("style-module").href = `./styles/module-${new_color}.css`;
+
+    // document.body.style.backgroundImage = `url(./images/bg_${new_color}.svg)`;
+
+  }
+
+
+  changeBackground();
+
+
+</script>
