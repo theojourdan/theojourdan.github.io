@@ -1,69 +1,77 @@
-/*html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}*/
+/* ── CSS variables: dark (default) ───────────────────────────────────────── */
+:root {
+  --bg:               #111;
+  --bg-sidebar:       #111;
+  --text:             #d4d4d4;
+  --link:             #7eb8f7;
+  --link-hover-bg:    rgba(255,255,255,0.08);
+  --link-hover-color: #fff;
+  --accent:           #7eb8f7;
+  --accent-text:      #111;
+  --border:           #333;
+  --border-hover:     #666;
+  --line-color:       #d4d4d4;
+}
+
+/* ── CSS variables: light override ───────────────────────────────────────── */
+body.light {
+  --bg:               #fff;
+  --bg-sidebar:       #fff;
+  --text:             #000;
+  --link:             blue;
+  --link-hover-bg:    yellow;
+  --link-hover-color: #000;
+  --accent:           blue;
+  --accent-text:      #fff;
+  --border:           #ccc;
+  --border-hover:     #777;
+  --line-color:       #000;
+}
 
 body  {
-  color: black;
+  color: var(--text);
+  background-color: var(--bg);
   font-family: OpenSans;
   padding-bottom: 100px;
 }
 
-/*col-md-4 {
-  position: fixed;
-  background-color: white;
-}*/
-
 @media (min-width: 994px) and (min-height: 539px) {
   #col-desc {
     position: fixed;
+    background-color: var(--bg-sidebar);
   }
 }
 
-/*@media (min-width > 994px) {
-  #col-desc {
-    position: fixed;
-  }
-}*/
-
 h1 {
-  color: blue;
+  color: var(--accent);
   font-size: 55px;
   font-family: OpenSans;
   font-weight: bold;
 }
 
-h1 span:hover {  
-  /*font-weight: bold;*/
-  /*color: orange;*/
-  background-color: white;
+h1 span:hover {
+  background-color: var(--bg);
 }
-
 
 /* Style the navbar */
 #navbar {
   padding-top: 1vw;
   z-index: 3;
   overflow: hidden;
-  /*border-bottom: orange 4px solid;*/
 }
-
 
 /* Navbar links */
 #navbar a {
-  /*float: left;*/
-  /*display: block;*/
-  color: black;
+  color: var(--text);
   text-align: center;
-  /*padding: 14px;*/
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-  background-color: white;
+  background-color: var(--bg-sidebar);
 }
 
 .selected, #navbar a:hover {
-  color: blue !important;
+  color: var(--accent) !important;
 }
 
 /* Page content */
@@ -72,8 +80,6 @@ h1 span:hover {
   z-index: 1;
   position: relative;
 }
-
-
 
 h2 {
   font-weight: bold;
@@ -87,13 +93,12 @@ h2 {
 }
 
 a {
-  color: blue;
-  /*text-decoration: underline blue dotted 2px;*/
+  color: var(--link);
 }
 
 a:hover {
-  color: black;
-  background-color: yellow;
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg);
   text-decoration: none;
 }
 
@@ -101,26 +106,22 @@ a:hover {
   font-weight: bold;
   margin-right: 10px;
   font-size: 15px;
-
 }
 
 .project-img {
-  /*width: 8vw;*/
-  /*max-width: 120px;*/
   width: 120px;
   max-width: 8vw;
   object-fit: contain;
-  /*float: right;*/
-  border:  1px black dotted;
+  border: 1px var(--text) dotted;
 }
 
 .paper-title{
   font-weight: bold;
-  color: black;
+  color: var(--text);
 }
 
 .paper {
-  border-left: black 4px solid;
+  border-left: var(--text) 4px solid;
   padding-left: 5px;
   margin-left: 6px;
 }
@@ -129,18 +130,14 @@ a:hover {
   border-left: none;
 }
 
-.project-desc {
-/*  color: white;
-  background-color: orange;*/
-}
-
+.project-desc {}
 
 .regular-text{
   position: relative;
 }
 
 .dot-under {
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted var(--text);
 }
 
 .hovertext::after {
@@ -151,8 +148,8 @@ a:hover {
   max-width: 45vw;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  background-color: blue;
-  color: #fff;
+  background-color: var(--accent);
+  color: var(--accent-text);
   text-align: right;
   border-radius: 0px;
   padding: 3px 5px;
@@ -175,15 +172,12 @@ a:hover {
 
 #images-holder{
   position: relative;
-  /*float: left;*/
 }
 
 #photo-me {
   position: relative;
   width:  120px;
-  /*display: block;*/
   margin-left: 4vw;
-  /*margin-right: ;*/
   padding-top: 3vw;
   z-index: 1;
 }
@@ -192,9 +186,7 @@ a:hover {
   z-index: 2;
   position: absolute;
   width:  120px;
-  /*display: block;*/
   margin-left: 4vw;
-  /*margin-right: ;*/
   padding-top: 3vw;
   left: 0;
 }
@@ -204,42 +196,34 @@ a:hover {
 }
 
 .bibs {
-  color: black;
-  text-decoration: 1px black underline;
+  color: var(--text);
+  text-decoration: 1px var(--text) underline;
 }
 
 .bibs-pubs {
-  /*font-size: 12px;*/
   margin-left: 0px;
   margin-top: 0;
   text-decoration: none;
-  /*text-transform: uppercase;*/
   font-family: Courier;
 }
 
 .bibs:hover{
-  /*color: orange;*/
-  background-color: white;
+  background-color: var(--bg);
   text-decoration: none;
 }
 
 .vertical-txt {
   float: right;
-  /*text-align: right;*/
   padding-top: 10px;
   padding-bottom: 10px;
   text-orientation: sideways;
   writing-mode: vertical-lr;
   text-transform: uppercase;
-  color: white;
+  color: var(--accent-text);
 }
 
-/*.evencat{
-  background-color: orange;
-}*/
-
-.oddcat{
-  background-color: blue;
+.oddcat, .evencat {
+  background-color: var(--accent);
 }
 
 .resume-date {
@@ -248,8 +232,7 @@ a:hover {
 
 .resume-title {
   font-weight: bold;
-  /*background-color: orange;*/
-  color: black;
+  color: var(--text);
   padding: 0px 10px;
 }
 
@@ -264,9 +247,8 @@ a:hover {
 .video {
   position: relative;
   padding-bottom: 56.25%;
-  border:  1px black dotted;
+  border: 1px var(--border) dotted;
 }
-
 
 iframe {
   position: absolute;
@@ -276,23 +258,15 @@ iframe {
   height: 100%;
 }
 
-#color-button {
-  border: none;
-  background-color: rgba(0, 0, 0,0);
-  margin: 0;
-  padding: 0;
-}
-
-
 div.gallery {
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   float: left;
   width: 180px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  border: 1px solid var(--border-hover);
 }
 
 div.gallery img {
@@ -305,18 +279,18 @@ div.desc {
   text-align: center;
 }
 
-    .pdf {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-    }
+.pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
 
-    .pdf,
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+.pdf,
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 /* ── News list ────────────────────────────────────────────────────────────── */
 .news-list {
@@ -326,7 +300,7 @@ div.desc {
 
 .news-list li {
   padding: 6px 0;
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted var(--border);
 }
 
 .news-list li:last-child {
@@ -356,3 +330,26 @@ div.desc {
   }
 }
 
+/* ── Dark/light toggle button ────────────────────────────────────────────── */
+#dark-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 1000;
+  background: none;
+  border: 2px solid var(--text);
+  color: var(--text);
+  font-size: 16px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  border-radius: 50%;
+  line-height: 1;
+  padding: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+#dark-toggle:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}

@@ -22,29 +22,37 @@
   }, false);
 }());
 
-// ── Color theme switcher ──────────────────────────────────────────────────────
-function changeBackground() {
-  var colors = ['orange', 'pink', 'green'];
-  var button = document.getElementById('color-button');
-  if (!button) return;
-
-  var color = button.innerHTML;
-  var new_color;
-  do {
-    new_color = colors[Math.floor(Math.random() * colors.length)];
-  } while (new_color === color);
-
-  button.innerHTML = new_color;
-
-  var inSubpage = window.location.pathname.indexOf('/pages/') !== -1;
-  var prefix = inSubpage ? '../styles/' : './styles/';
-  var styleLink = document.getElementById('style-module');
-  if (styleLink) {
-    styleLink.href = prefix + 'module-' + new_color + '.css';
-  }
+// ── Dark / light toggle ───────────────────────────────────────────────────────
+function getLineColor() {
+  return document.body.classList.contains('light') ? '#000' : '#d4d4d4';
 }
 
-changeBackground();
+function updateToggleButton() {
+  var btn = document.getElementById('dark-toggle');
+  if (!btn) return;
+  btn.textContent = document.body.classList.contains('light') ? '\u263e' : '\u2600';
+  btn.title = document.body.classList.contains('light') ? 'Switch to dark mode' : 'Switch to light mode';
+}
+
+function toggleDark() {
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  updateToggleButton();
+  // Redraw lines with updated color
+  var old = document.querySelector('svg[data-lines="1"]');
+  if (old) old.remove();
+  drawLines();
+}
+
+// Apply saved theme on load (dark is default)
+(function () {
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+  }
+  updateToggleButton();
+}());
+
+document.getElementById('dark-toggle').addEventListener('click', toggleDark);
 
 // ── Decorative vertical lines ─────────────────────────────────────────────────
 function drawLines() {
@@ -55,12 +63,6 @@ function drawLines() {
   var w = rect.width;
   if (w === 0) return;
 
-  // Full page height (not just the column height)
-  var h = Math.max(
-    document.documentElement.scrollHeight,
-    document.documentElement.clientHeight
-  );
-
   // 6 random x positions spread across the column width (with small margins)
   var margin = 6;
   var usable = w - margin * 2;
@@ -69,9 +71,9 @@ function drawLines() {
   xs.sort(function (a, b) { return a - b; });
   xs = xs.map(function (v) { return Math.round(margin + v * usable); });
 
-  // Build SVG — positioned fixed so it always covers the full visible + scrollable height
   var svgNS = 'http://www.w3.org/2000/svg';
   var svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('data-lines', '1');
   svg.style.position = 'fixed';
   svg.style.top = '0';
   svg.style.left = Math.round(rect.left) + 'px';
@@ -81,14 +83,14 @@ function drawLines() {
   svg.style.zIndex = '0';
   svg.setAttribute('xmlns', svgNS);
 
+  var color = getLineColor();
   for (var i = 0; i < 6; i++) {
     var line = document.createElementNS(svgNS, 'line');
     line.setAttribute('x1', xs[i]);
     line.setAttribute('y1', 0);
     line.setAttribute('x2', xs[i]);
     line.setAttribute('y2', '100%');
-    line.setAttribute('stroke', 'black');
-    // Randomly normal (1px) or bold (3px)
+    line.setAttribute('stroke', color);
     line.setAttribute('stroke-width', Math.random() < 0.5 ? 1 : 3);
     svg.appendChild(line);
   }
