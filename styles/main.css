@@ -1,13 +1,13 @@
 /* ── CSS variables: dark (default) ───────────────────────────────────────── */
 :root {
-  --bg:               #111;
-  --bg-sidebar:       #111;
+  --bg:               #222;
+  --bg-sidebar:       #222;
   --text:             #d4d4d4;
   --link:             #7eb8f7;
   --link-hover-bg:    rgba(255,255,255,0.08);
   --link-hover-color: #fff;
   --accent:           #7eb8f7;
-  --accent-text:      #111;
+  --accent-text:      #222;
   --border:           #333;
   --border-hover:     #666;
   --line-color:       #d4d4d4;
@@ -15,8 +15,8 @@
 
 /* ── CSS variables: light override ───────────────────────────────────────── */
 body.light {
-  --bg:               #fff;
-  --bg-sidebar:       #fff;
+  --bg:               #ebebeb;
+  --bg-sidebar:       #ebebeb;
   --text:             #000;
   --link:             blue;
   --link-hover-bg:    yellow;
@@ -332,24 +332,29 @@ body {
 
 /* ── Dark/light toggle button ────────────────────────────────────────────── */
 #dark-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 1000;
   background: none;
   border: 2px solid var(--text);
   color: var(--text);
-  font-size: 16px;
-  width: 34px;
-  height: 34px;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   border-radius: 50%;
   line-height: 1;
   padding: 0;
+  vertical-align: middle;
+  margin-left: 8px;
   transition: background 0.15s, color 0.15s;
 }
 
 #dark-toggle:hover {
   background-color: var(--text);
   color: var(--bg);
+}
+
+/* Name + toggle on same line */
+#name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

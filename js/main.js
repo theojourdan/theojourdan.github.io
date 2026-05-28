@@ -8,7 +8,7 @@
 
   var all_imgs = [img1, img2, img3, img4];
   for (var i = 1; i < all_imgs.length; i++) {
-    all_imgs[i].style.visibility = 'hidden';
+    if (all_imgs[i]) all_imgs[i].style.visibility = 'hidden';
   }
 
   var imgholder = document.getElementById('images-holder');
@@ -17,7 +17,7 @@
   imgholder.addEventListener('mouseenter', function () {
     cnt = (cnt + 1) % all_imgs.length;
     for (var i = 0; i < all_imgs.length; i++) {
-      all_imgs[i].style.visibility = (cnt === i) ? 'visible' : 'hidden';
+      if (all_imgs[i]) all_imgs[i].style.visibility = (cnt === i) ? 'visible' : 'hidden';
     }
   }, false);
 }());
@@ -52,7 +52,6 @@ function toggleDark() {
   updateToggleButton();
 }());
 
-document.getElementById('dark-toggle').addEventListener('click', toggleDark);
 
 // ── Decorative vertical lines ─────────────────────────────────────────────────
 function drawLines() {
