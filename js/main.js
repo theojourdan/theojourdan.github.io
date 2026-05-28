@@ -22,7 +22,7 @@
   }, false);
 }());
 
-// ── Color background switcher ─────────────────────────────────────────────────
+// ── Color theme switcher ──────────────────────────────────────────────────────
 function changeBackground() {
   var colors = ['orange', 'pink', 'green'];
   var button = document.getElementById('color-button');
@@ -36,10 +36,6 @@ function changeBackground() {
 
   button.innerHTML = new_color;
 
-  var rd1 = Math.random() * 20 + 40;
-  var rd2 = Math.random() * 45 + 15;
-  document.body.style.backgroundPosition = rd1 + '% ' + rd2 + '%';
-
   var inSubpage = window.location.pathname.indexOf('/pages/') !== -1;
   var prefix = inSubpage ? '../styles/' : './styles/';
   var styleLink = document.getElementById('style-module');
@@ -49,3 +45,44 @@ function changeBackground() {
 }
 
 changeBackground();
+
+// ── Decorative vertical lines ─────────────────────────────────────────────────
+function drawLines() {
+  var col = document.getElementById('lines-col');
+  if (!col) return;
+
+  var w = col.offsetWidth;
+  var h = col.offsetHeight;
+  if (w === 0 || h === 0) return;
+
+  // 6 random x positions spread across the column width (with small margins)
+  var margin = 6;
+  var usable = w - margin * 2;
+  var xs = [];
+  for (var i = 0; i < 6; i++) xs.push(Math.random());
+  xs.sort(function (a, b) { return a - b; });
+  xs = xs.map(function (v) { return Math.round(margin + v * usable); });
+
+  // Build SVG
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('width', w);
+  svg.setAttribute('height', h);
+  svg.setAttribute('xmlns', svgNS);
+
+  for (var i = 0; i < 6; i++) {
+    var line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', xs[i]);
+    line.setAttribute('y1', 0);
+    line.setAttribute('x2', xs[i]);
+    line.setAttribute('y2', h);
+    line.setAttribute('stroke', 'black');
+    // Randomly normal (1px) or bold (3px)
+    line.setAttribute('stroke-width', Math.random() < 0.5 ? 1 : 3);
+    svg.appendChild(line);
+  }
+
+  col.appendChild(svg);
+}
+
+window.addEventListener('load', drawLines);
