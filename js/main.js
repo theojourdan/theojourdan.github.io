@@ -51,9 +51,15 @@ function drawLines() {
   var col = document.getElementById('lines-col');
   if (!col) return;
 
-  var w = col.offsetWidth;
-  var h = col.offsetHeight;
-  if (w === 0 || h === 0) return;
+  var rect = col.getBoundingClientRect();
+  var w = rect.width;
+  if (w === 0) return;
+
+  // Full page height (not just the column height)
+  var h = Math.max(
+    document.documentElement.scrollHeight,
+    document.documentElement.clientHeight
+  );
 
   // 6 random x positions spread across the column width (with small margins)
   var margin = 6;
@@ -63,11 +69,16 @@ function drawLines() {
   xs.sort(function (a, b) { return a - b; });
   xs = xs.map(function (v) { return Math.round(margin + v * usable); });
 
-  // Build SVG
+  // Build SVG — positioned fixed so it always covers the full visible + scrollable height
   var svgNS = 'http://www.w3.org/2000/svg';
   var svg = document.createElementNS(svgNS, 'svg');
-  svg.setAttribute('width', w);
-  svg.setAttribute('height', h);
+  svg.style.position = 'fixed';
+  svg.style.top = '0';
+  svg.style.left = Math.round(rect.left) + 'px';
+  svg.style.width = Math.round(w) + 'px';
+  svg.style.height = '100vh';
+  svg.style.pointerEvents = 'none';
+  svg.style.zIndex = '0';
   svg.setAttribute('xmlns', svgNS);
 
   for (var i = 0; i < 6; i++) {
@@ -75,14 +86,14 @@ function drawLines() {
     line.setAttribute('x1', xs[i]);
     line.setAttribute('y1', 0);
     line.setAttribute('x2', xs[i]);
-    line.setAttribute('y2', h);
+    line.setAttribute('y2', '100%');
     line.setAttribute('stroke', 'black');
     // Randomly normal (1px) or bold (3px)
     line.setAttribute('stroke-width', Math.random() < 0.5 ? 1 : 3);
     svg.appendChild(line);
   }
 
-  col.appendChild(svg);
+  document.body.appendChild(svg);
 }
 
 window.addEventListener('load', drawLines);
