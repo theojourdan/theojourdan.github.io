@@ -324,3 +324,18 @@ div.desc {
         padding: 0;
     }
 
+/* ── News list ────────────────────────────────────────────────────────────── */
+.news-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.news-list li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
