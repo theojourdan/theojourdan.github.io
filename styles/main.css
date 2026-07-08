@@ -105,19 +105,20 @@ a:hover {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 18px;
   margin-bottom: 24px;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   min-height: 100%;
-  padding: 12px;
   border: 1px dotted var(--text);
   color: var(--text);
   background-color: var(--bg);
   text-decoration: none;
+  transition: border-color 0.15s, background-color 0.15s, transform 0.15s;
 }
 
 .project-card:hover,
@@ -126,14 +127,16 @@ a:hover {
   background-color: var(--link-hover-bg);
   border-color: var(--accent);
   text-decoration: none;
+  transform: translateY(-2px);
 }
 
 .project-title {
   display: block;
   color: var(--link);
   font-weight: bold;
-  margin: 12px 0 8px;
-  font-size: 15px;
+  margin: 0;
+  padding: 12px;
+  font-size: 16px;
   line-height: 1.35;
 }
 
@@ -145,9 +148,9 @@ a:hover {
 
 .project-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  border: 1px var(--text) dotted;
+  border-bottom: 1px var(--text) dotted;
 }
 
 .project-detail {
@@ -183,6 +186,7 @@ a:hover {
 }
 
 .project-hero {
+  width: min(100%, 460px);
   margin: 0 0 28px;
   border: 1px dotted var(--text);
 }
@@ -190,7 +194,9 @@ a:hover {
 .project-hero img {
   display: block;
   width: 100%;
+  max-height: 300px;
   height: auto;
+  object-fit: contain;
 }
 
 .project-section {
@@ -224,8 +230,9 @@ a:hover {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  max-width: 560px;
 }
 
 .project-gallery .gallery {
@@ -243,7 +250,7 @@ a:hover {
 .project-gallery img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   height: auto;
   object-fit: cover;
 }
@@ -255,6 +262,11 @@ a:hover {
 
   .project-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .project-hero {
+    width: 100%;
   }
 
   .project-lead {
