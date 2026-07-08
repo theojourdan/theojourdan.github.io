@@ -210,6 +210,15 @@ a:hover {
   height: auto;
 }
 
+.project-diagram-small {
+  width: min(100%, 520px);
+}
+
+.project-diagram-small img {
+  max-height: 220px;
+  object-fit: contain;
+}
+
 .project-section {
   margin-bottom: 30px;
 }
