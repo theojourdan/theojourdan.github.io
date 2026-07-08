@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-site-verification" content="v5jvM1yEFbJco0EDePdyAC-h6F1jGA2LfCgdEXcGG-o" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collective Craft – Theo Jourdan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="../styles/main.css">
+  <script src="../js/jquery.min.js"></script>
+  <link rel="icon" href="../images/vaza.png">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row main-row">
+
+    <div class="col-md-3">
+      <div id="col-desc">
+        <div id="images-holder">
+          <img id="photo-me" src="../images/face1.png" alt="Théo Jourdan">
+          <img class="realpics" id="photo-me2" src="../images/face2.png" alt="">
+          <img class="realpics" id="photo-me3" src="../images/face3.png" alt="">
+          <img class="realpics" id="photo-me4" src="../images/face4.png" alt="">
+        </div>
+        <h1 id="name">Théo<br/>Jourdan <button id="dark-toggle" onclick="toggleDark()">&#9728;</button></h1>
+        <span class="email"><span class="hovertext emailtext" data-hover="email me!">jourdan.theo@protonmail.com</span></span><br/>
+        <span class="address">LISN lab<br/>Université Paris-Saclay<br/>Paris<br/>France</span>
+        <nav id="navbar">
+          <div><a href="../index.html">about</a></div>
+          <div><a class="selected" href="projects.html">projects</a></div>
+          <div><a href="publications.html">publications</a></div>
+          <div><a href="contact.html">contact</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <main class="col-md-7 project-detail">
+      <a class="project-back" href="projects.html">← back to projects</a>
+
+      <header class="project-header">
+        <h2 id="projects">Collective Craft: How Artists Collaborate to Train AI-based Audio Synthesis Model for Music</h2>
+        <p class="project-lead">
+          This project studies how artists train AI-based audio synthesis models for musical performance and installations. Rather than treating training as a hidden technical step, it shows how artists and collectives make it into a situated, collaborative and craft-like practice.
+        </p>
+      </header>
+
+      <figure class="project-hero">
+        <img src="../images/header.png" alt="Abstract colorful shapes representing collective audio synthesis">
+      </figure>
+
+      <section class="project-section">
+        <h3>Overview</h3>
+        <p>Recent advances in generative AI have opened new possibilities for neural audio synthesis in music. Yet most research and tools focus on composition interfaces, live performance control or model architectures, while the act of training models remains underexplored from the perspective of artists.</p>
+        <p>This project reframes training as part of the artistic process. Data curation, model optimization and evaluation are not only technical operations: they are moments where aesthetic intentions, embodied musical knowledge and technical constraints are negotiated within a collective.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Research questions</h3>
+        <p>The study asks how artists collectively make sense of opaque neural audio synthesis training processes, and how artistic intentions are communicated, negotiated and inscribed into trained models.</p>
+        <p>It also examines how collaboration is organized when expertise is distributed across artists, researchers, engineers, performers, instrument designers and other members of a creative project.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Method</h3>
+        <p>We conducted semi-structured interviews with 13 artists across 8 musical projects using custom-trained audio synthesis models for performance or installations. The projects involved models such as RAVE, DDSP, WaveNet, autoregressive systems and music-to-latent approaches, with interaction modalities including voice, gesture, instruments and controllers.</p>
+        <p>The interviews focused on data collection, model training and collaboration. We then conducted a thematic analysis to understand how collectives communicate during training, how they build practical knowledge, and how they evaluate model behavior through musical practice.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Findings</h3>
+        <p>First, collectives develop their own modes of communication to bridge the gap between machine learning concepts and embodied musical knowledge. Artists create shared vocabularies, notations and listening practices to make models musically meaningful and responsive to artistic intent.</p>
+        <p>Second, artists develop situated know-how through iterative training. Rather than preparing a perfect dataset in advance, they often train quickly, listen, adjust the dataset, retrain and repeat. This makes dataset construction a form of sculpting guided by aesthetic goals.</p>
+        <p>Third, musical engagement becomes a primary way to evaluate and steer models. Improvisation, collective listening, jamming and performance allow artists to test what the system can support musically and where its expressive boundaries lie.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Contribution</h3>
+        <p>The project challenges narratives that frame AI music tools as automatically democratizing creative practice. Training remains complex and often requires technical mediation, but artistic decision-making still guides how models are shaped, judged and used.</p>
+        <p>By foregrounding model training as a site of interaction and collaboration, the study argues for more interactive, collaborative and musically grounded tools for AI-based audio synthesis.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Publication</h3>
+        <div class="project-links">
+          <a href="https://hal.science/hal-05655033/">Collective Craft: How Artists Collaborate to Train AI-based Audio Synthesis Model for Music - HAL</a>
+          <a href="https://doi.org/10.1145/3803784.3807533">Creativity and Cognition 2026 - DOI</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="col-md-2" id="lines-col"></div>
+
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
