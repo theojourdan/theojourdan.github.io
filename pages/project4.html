@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-site-verification" content="v5jvM1yEFbJco0EDePdyAC-h6F1jGA2LfCgdEXcGG-o" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DySan – Theo Jourdan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="../styles/main.css">
+  <script src="../js/jquery.min.js"></script>
+  <link rel="icon" href="../images/vaza.png">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row main-row">
+
+    <div class="col-md-3">
+      <div id="col-desc">
+        <div id="images-holder">
+          <img id="photo-me" src="../images/face1.png" alt="Théo Jourdan">
+          <img class="realpics" id="photo-me2" src="../images/face2.png" alt="">
+          <img class="realpics" id="photo-me3" src="../images/face3.png" alt="">
+          <img class="realpics" id="photo-me4" src="../images/face4.png" alt="">
+        </div>
+        <h1 id="name">Théo<br/>Jourdan <button id="dark-toggle" onclick="toggleDark()">&#9728;</button></h1>
+        <span class="email"><span class="hovertext emailtext" data-hover="email me!">jourdan.theo@protonmail.com</span></span><br/>
+        <span class="address">LISN lab<br/>Université Paris-Saclay<br/>Paris<br/>France</span>
+        <nav id="navbar">
+          <div><a href="../index.html">about</a></div>
+          <div><a class="selected" href="projects.html">projects</a></div>
+          <div><a href="publications.html">publications</a></div>
+          <div><a href="contact.html">contact</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <main class="col-md-7 project-detail">
+      <a class="project-back" href="projects.html">← back to projects</a>
+
+      <header class="project-header">
+        <h2 id="projects">DySan: Dynamically Sanitizing Motion Sensor Data Against Sensitive Inferences Through Adversarial Networks</h2>
+        <p class="project-lead">
+          DySan is a privacy-preserving framework that sanitizes smartphone motion sensor data before it is shared with cloud-based activity monitoring services. The goal is to preserve useful information for physical activity recognition while reducing the risk of inferring sensitive attributes from raw sensor signals.
+        </p>
+      </header>
+
+      <figure class="project-diagram">
+        <img src="../images/dysan-overview.png" alt="DySan offline training and online smartphone sanitization pipeline">
+      </figure>
+
+      <section class="project-section">
+        <h3>Overview</h3>
+        <p>Smartphones and wearables make it easy to monitor physical activity through accelerometers and gyroscopes. These signals are useful for recognizing activities such as walking, jogging, sitting or climbing stairs, but they can also leak sensitive information about users when sent to external analytics services.</p>
+        <p>This project addresses the privacy risks created by motion sensor data. Instead of sending raw signals to the cloud, DySan transforms them locally on the smartphone so that activity monitoring remains possible while unwanted sensitive inferences become much harder.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Approach</h3>
+        <p>DySan is inspired by adversarial learning. It trains a sanitizer, a predictor and a discriminator together. The sanitizer modifies the raw signal, the predictor encourages the sanitized signal to remain useful for activity recognition, and the discriminator tries to infer a sensitive attribute from the sanitized data.</p>
+        <p>The training objective balances three criteria: protecting privacy, preserving activity recognition accuracy and limiting distortion between the original and sanitized signals. This makes the system useful beyond classification, for example for estimating physical activity statistics such as step count.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Dynamic sanitization</h3>
+        <p>A single sanitization model does not necessarily provide the best privacy-utility trade-off for every user and every moment. Motion signals depend on the person, the sensor, the activity and the evolution of movement over time.</p>
+        <p>DySan therefore trains several sanitizer models with different hyperparameters during an offline phase. During the online phase, deployed on the smartphone, it dynamically selects the most appropriate sanitizer for each batch of incoming data.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Evaluation</h3>
+        <p>DySan was evaluated on real motion sensor datasets using gender as the sensitive attribute to protect. Without protection, gender could be inferred from raw data with very high accuracy. With sanitized data, DySan reduced gender inference substantially while keeping activity recognition accurate.</p>
+        <p>The experiments showed that DySan could reduce gender inference from about 98% on raw data to 57% on sanitized data, while activity recognition only dropped from about 95% to 92%. The system also preserved step counting reasonably well and remained compatible with real-time processing on a smartphone.</p>
+      </section>
+
+      <section class="project-section">
+        <h3>Publication and code</h3>
+        <div class="project-links">
+          <a href="https://doi.org/10.1145/3433210.3453095">DySan: Dynamically Sanitizing Motion Sensor Data Against Sensitive Inferences Through Adversarial Networks - ASIA CCS 2021</a>
+          <a href="https://github.com/DynamicSanitizer/DySan">DySan implementation and datasets</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="col-md-2" id="lines-col"></div>
+
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

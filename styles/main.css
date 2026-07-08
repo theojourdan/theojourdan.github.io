@@ -199,6 +199,17 @@ a:hover {
   object-fit: contain;
 }
 
+.project-diagram {
+  margin: 0 0 28px;
+  border: 1px dotted var(--text);
+}
+
+.project-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .project-section {
   margin-bottom: 30px;
 }
