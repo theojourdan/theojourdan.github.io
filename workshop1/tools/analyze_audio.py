@@ -5,6 +5,7 @@ samples, 50% overlap, native sample rate. Loudness: EBU R128 integrated LUFS.
 See https://ffmpeg.org/ffmpeg-filters.html#aspectralstats and #ebur128.
 """
 from pathlib import Path
+import hashlib
 import json
 import math
 import re
@@ -25,7 +26,7 @@ def analyze(path):
     integrated = float(re.findall(r'I:\s*([-\d.]+) LUFS', loudness)[-1])
     if not values or not math.isfinite(integrated):
         raise ValueError(f'Cannot analyze {path}')
-    return {'id': path.stem, 'centroid': round(sum(values) / len(values), 2), 'loudness': integrated}
+    return {'id': path.stem, 'version': hashlib.sha256(path.read_bytes()).hexdigest()[:12], 'centroid': round(sum(values) / len(values), 2), 'loudness': integrated}
 
 if __name__ == '__main__':
     datasets = {folder.name: [analyze(p) for p in sorted(folder.glob('*.wav'))]

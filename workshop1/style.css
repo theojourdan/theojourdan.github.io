@@ -32,3 +32,9 @@ svg { width: 100%; height: auto; display: block; overflow: visible; }
 :focus-visible { outline: 3px solid #287c68; outline-offset: 3px; }
 #status { color: #52646b; }
 @media (max-width: 760px) { main { padding: 24px 12px; } .workspace { grid-template-columns: 1fr; gap: 12px; } .chart-panel { position: static; } .sound-row { padding: 14px 10px; gap: 8px; grid-template-columns: minmax(0, 1fr) 100px; } }
+
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+.page-header h1 { margin: 0; }
+#readme-toggle { border: 1px solid #aabbb3; border-radius: 0; padding: 10px 18px; background: #fff; color: inherit; font: inherit; cursor: pointer; }
+#readme-toggle[aria-expanded="true"] { background: #e8f0ed; }
+#readme-content { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.65; padding: 24px; margin-bottom: 26px; border: 1px solid #ccd8d2; background: #fff; }

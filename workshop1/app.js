@@ -1,4 +1,10 @@
 'use strict';
+const readmeToggle = document.getElementById('readme-toggle');
+readmeToggle.addEventListener('click', () => {
+  const content = document.getElementById('readme-content');
+  content.hidden = !content.hidden;
+  readmeToggle.setAttribute('aria-expanded', String(!content.hidden));
+});
 const assignments = new Map();
 let datasets;
 let activeDataset = null;
@@ -87,7 +93,7 @@ function selectDataset(key) {
 
 async function init() {
   try {
-    const response = await fetch('./features.json');
+    const response = await fetch('./features.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error('Audio features unavailable');
     datasets = await response.json();
     Object.entries(datasets).forEach(([key, sounds]) => {
@@ -100,7 +106,7 @@ async function init() {
         const id = `${key}-${sound.id}`;
         const row = document.createElement('li');
         row.className = 'sound-row';
-        row.innerHTML = `<div><span class="sound-label" id="label-${id}">Son ${sound.id}</span><audio id="audio-${id}" controls preload="none" aria-labelledby="heading-${key} label-${id}" src="./audio/${key}/${sound.id}.wav"></audio></div><div><label class="class-label" for="class-${id}">Classe</label><select id="class-${id}" aria-label="Classe du son ${sound.id}, dataset ${key.slice(-1)}"><option value="0">—</option>${[1, 2, 3, 4, 5].map(n => `<option value="${n}">Classe ${n}</option>`).join('')}</select></div>`;
+        row.innerHTML = `<div><span class="sound-label" id="label-${id}">Son ${sound.id}</span><audio id="audio-${id}" controls preload="none" aria-labelledby="heading-${key} label-${id}" src="./audio/${key}/${sound.id}.wav?v=${sound.version}"></audio></div><div><label class="class-label" for="class-${id}">Classe</label><select id="class-${id}" aria-label="Classe du son ${sound.id}, dataset ${key.slice(-1)}"><option value="0">—</option>${[1, 2, 3, 4, 5].map(n => `<option value="${n}">Classe ${n}</option>`).join('')}</select></div>`;
         row.querySelector('select').addEventListener('change', event => {
           assignments.set(id, Number(event.target.value));
           if (activeDataset === key) renderChart(key);
