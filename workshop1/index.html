@@ -4,89 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Workshop 1 — Écoute des sons</title>
-  <style>
-    :root { color-scheme: light; font-family: system-ui, -apple-system, sans-serif; color: #1d3037; background: #f4f6f5; }
-    * { box-sizing: border-box; }
-    body { margin: 0; }
-    main { max-width: 1280px; margin: 0 auto; padding: 56px 24px; }
-    .eyebrow { color: #42685e; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 12px 0; letter-spacing: -.04em; }
-    header p { color: #52646b; line-height: 1.65; max-width: 720px; }
-    .datasets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 36px; align-items: start; }
-    section { background: #fff; border: 1px solid #dce4e0; border-radius: 16px; overflow: hidden; }
-    .section-heading { display: flex; align-items: center; justify-content: space-between; padding: 22px; border-bottom: 1px solid #e6ece9; }
-    h2 { font-size: 1.2rem; margin: 0; }
-    .section-heading span { color: #52646b; font-size: .85rem; }
-    ol { list-style: none; padding: 0; margin: 0; }
-    li { padding: 18px 20px; border-bottom: 1px solid #edf0ee; }
-    li:last-child { border-bottom: 0; }
-    li > span { display: block; font-size: .9rem; font-weight: 600; margin-bottom: 10px; }
-    audio { display: block; width: 100%; height: 44px; }
-    audio:focus-visible { outline: 3px solid #287c68; outline-offset: 4px; border-radius: 24px; }
-    @media (max-width: 1000px) { .datasets { grid-template-columns: 1fr; } main { max-width: 650px; padding: 32px 16px; } }
-  </style>
+  <title>Workshop 1</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
 <main>
-  <header>
-    <div class="eyebrow">Workshop 1</div>
-    <h1>Écoute des sons</h1>
-    <p>Explorez les trois listes de sons ci-dessous. Utilisez les lecteurs pour écouter, mettre en pause ou réécouter chaque extrait. Le lancement d’un son met automatiquement le précédent en pause.</p>
-  </header>
-  <div class="datasets">
-    <section aria-labelledby="heading-dataset1">
-      <div class="section-heading"><h2 id="heading-dataset1">Dataset 1</h2><span>10 sons</span></div>
-      <ol>
-        <li><span id="dataset1-1">Son 01</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-1"><source src="/workshop1/audio/dataset1/01.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-2">Son 02</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-2"><source src="/workshop1/audio/dataset1/02.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-3">Son 03</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-3"><source src="/workshop1/audio/dataset1/03.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-4">Son 04</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-4"><source src="/workshop1/audio/dataset1/04.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-5">Son 05</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-5"><source src="/workshop1/audio/dataset1/05.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-6">Son 06</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-6"><source src="/workshop1/audio/dataset1/06.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-7">Son 07</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-7"><source src="/workshop1/audio/dataset1/07.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-8">Son 08</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-8"><source src="/workshop1/audio/dataset1/08.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-9">Son 09</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-9"><source src="/workshop1/audio/dataset1/09.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset1-10">Son 10</span><audio controls preload="none" aria-labelledby="heading-dataset1 dataset1-10"><source src="/workshop1/audio/dataset1/10.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-      </ol>
-    </section>
-    <section aria-labelledby="heading-dataset2">
-      <div class="section-heading"><h2 id="heading-dataset2">Dataset 2</h2><span>9 sons</span></div>
-      <ol>
-        <li><span id="dataset2-1">Son 01</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-1"><source src="/workshop1/audio/dataset2/01.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-2">Son 02</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-2"><source src="/workshop1/audio/dataset2/02.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-3">Son 03</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-3"><source src="/workshop1/audio/dataset2/03.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-4">Son 04</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-4"><source src="/workshop1/audio/dataset2/04.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-5">Son 05</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-5"><source src="/workshop1/audio/dataset2/05.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-6">Son 06</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-6"><source src="/workshop1/audio/dataset2/06.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-7">Son 07</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-7"><source src="/workshop1/audio/dataset2/07.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-8">Son 08</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-8"><source src="/workshop1/audio/dataset2/08.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset2-9">Son 09</span><audio controls preload="none" aria-labelledby="heading-dataset2 dataset2-9"><source src="/workshop1/audio/dataset2/09.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-      </ol>
-    </section>
-    <section aria-labelledby="heading-dataset3">
-      <div class="section-heading"><h2 id="heading-dataset3">Dataset 3</h2><span>9 sons</span></div>
-      <ol>
-        <li><span id="dataset3-1">Son 01</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-1"><source src="/workshop1/audio/dataset3/01.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-2">Son 02</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-2"><source src="/workshop1/audio/dataset3/02.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-3">Son 03</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-3"><source src="/workshop1/audio/dataset3/03.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-4">Son 04</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-4"><source src="/workshop1/audio/dataset3/04.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-5">Son 05</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-5"><source src="/workshop1/audio/dataset3/05.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-6">Son 06</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-6"><source src="/workshop1/audio/dataset3/06.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-7">Son 07</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-7"><source src="/workshop1/audio/dataset3/07.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-8">Son 08</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-8"><source src="/workshop1/audio/dataset3/08.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-        <li><span id="dataset3-9">Son 09</span><audio controls preload="none" aria-labelledby="heading-dataset3 dataset3-9"><source src="/workshop1/audio/dataset3/09.wav" type="audio/wav">Votre navigateur ne prend pas en charge la lecture audio.</audio></li>
-      </ol>
+  <h1>Workshop 1</h1>
+  <div class="workspace">
+    <div id="datasets" aria-label="Datasets"></div>
+    <section class="chart-panel" aria-labelledby="chart-title">
+      <h2 id="chart-title">Sélectionnez un dataset</h2>
+      <div id="chart"></div>
+      <div id="legend" aria-label="Classes" hidden></div>
+      <p id="point-info" aria-live="polite"></p>
     </section>
   </div>
+  <p id="status" role="status">Chargement…</p>
+  <noscript>Activez JavaScript pour afficher les sons et le graphique.</noscript>
 </main>
-<script>
-  const players = Array.from(document.querySelectorAll('audio'));
-  players.forEach(player => {
-    player.addEventListener('play', () => {
-      players.forEach(other => { if (other !== player) other.pause(); });
-    });
-  });
-</script>
 </body>
 </html>

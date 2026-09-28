@@ -1,0 +1,148 @@
+{
+  "dataset1": [
+    {
+      "id": "01",
+      "centroid": 3194.97,
+      "loudness": -12.5
+    },
+    {
+      "id": "02",
+      "centroid": 2064.03,
+      "loudness": -14.8
+    },
+    {
+      "id": "03",
+      "centroid": 2737.23,
+      "loudness": -26.6
+    },
+    {
+      "id": "04",
+      "centroid": 3330.57,
+      "loudness": -22.6
+    },
+    {
+      "id": "05",
+      "centroid": 425.56,
+      "loudness": -8.6
+    },
+    {
+      "id": "06",
+      "centroid": 3312.69,
+      "loudness": -16.2
+    },
+    {
+      "id": "07",
+      "centroid": 2485.35,
+      "loudness": -13.0
+    },
+    {
+      "id": "08",
+      "centroid": 4419.03,
+      "loudness": -16.4
+    },
+    {
+      "id": "09",
+      "centroid": 3344.15,
+      "loudness": -16.8
+    },
+    {
+      "id": "10",
+      "centroid": 3692.47,
+      "loudness": -24.5
+    }
+  ],
+  "dataset2": [
+    {
+      "id": "01",
+      "centroid": 2156.22,
+      "loudness": -17.5
+    },
+    {
+      "id": "02",
+      "centroid": 5672.0,
+      "loudness": -20.4
+    },
+    {
+      "id": "03",
+      "centroid": 6835.26,
+      "loudness": -31.1
+    },
+    {
+      "id": "04",
+      "centroid": 3215.68,
+      "loudness": -19.3
+    },
+    {
+      "id": "05",
+      "centroid": 2918.9,
+      "loudness": -25.0
+    },
+    {
+      "id": "06",
+      "centroid": 3797.42,
+      "loudness": -29.8
+    },
+    {
+      "id": "07",
+      "centroid": 2193.28,
+      "loudness": -28.1
+    },
+    {
+      "id": "08",
+      "centroid": 2844.32,
+      "loudness": -29.5
+    },
+    {
+      "id": "09",
+      "centroid": 3838.32,
+      "loudness": -28.4
+    }
+  ],
+  "dataset3": [
+    {
+      "id": "01",
+      "centroid": 6352.02,
+      "loudness": -23.4
+    },
+    {
+      "id": "02",
+      "centroid": 3230.62,
+      "loudness": -23.5
+    },
+    {
+      "id": "03",
+      "centroid": 3978.18,
+      "loudness": -27.6
+    },
+    {
+      "id": "04",
+      "centroid": 4036.33,
+      "loudness": -23.4
+    },
+    {
+      "id": "05",
+      "centroid": 3986.53,
+      "loudness": -36.5
+    },
+    {
+      "id": "06",
+      "centroid": 6738.53,
+      "loudness": -24.4
+    },
+    {
+      "id": "07",
+      "centroid": 2662.66,
+      "loudness": -26.6
+    },
+    {
+      "id": "08",
+      "centroid": 4512.96,
+      "loudness": -35.1
+    },
+    {
+      "id": "09",
+      "centroid": 6808.93,
+      "loudness": -27.0
+    }
+  ]
+}
