@@ -37,4 +37,8 @@ svg { width: 100%; height: auto; display: block; overflow: visible; }
 .page-header h1 { margin: 0; }
 #readme-toggle { border: 1px solid #aabbb3; border-radius: 0; padding: 10px 18px; background: #fff; color: inherit; font: inherit; cursor: pointer; }
 #readme-toggle[aria-expanded="true"] { background: #e8f0ed; }
-#readme-content { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.65; padding: 24px; margin-bottom: 26px; border: 1px solid #ccd8d2; background: #fff; }
+#readme-content { overflow-wrap: anywhere; line-height: 1.65; padding: 24px; margin: 14px 0 26px; border: 1px solid #aabbb3; background: #fff; }
+
+.readme-area { margin-top: 24px; }
+#readme-content p:first-child { margin-top: 0; }
+#readme-content p:last-child { margin-bottom: 0; }
