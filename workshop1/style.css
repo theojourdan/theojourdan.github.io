@@ -28,10 +28,6 @@ svg { width: 100%; height: auto; display: block; overflow: visible; }
 .point circle { stroke: #fff; stroke-width: 2; }
 .point:hover circle, .point:focus circle { stroke: #1d3037; stroke-width: 3; }
 .point text { fill: #1d3037; font-size: 12px; font-weight: 650; paint-order: stroke; stroke: white; stroke-width: 3px; }
-#legend { display: flex; flex-wrap: wrap; gap: 10px 16px; padding: 12px 8px 0; font-size: .75rem; }
-#legend[hidden] { display: none; }
-.legend-item { display: inline-flex; align-items: center; gap: 6px; }
-.swatch { width: 10px; height: 10px; display: inline-block; }
 #point-info { font-size: .8rem; color: #52646b; min-height: 2.5em; margin: 18px 8px 0; }
 :focus-visible { outline: 3px solid #287c68; outline-offset: 3px; }
 #status { color: #52646b; }

@@ -1,5 +1,4 @@
 'use strict';
-const colors = ['#73857d', '#3074bf', '#d87924', '#34976d', '#9863bb', '#cb526f'];
 const assignments = new Map();
 let datasets;
 let activeDataset = null;
@@ -16,7 +15,6 @@ function svgElement(tag, attrs = {}, text = '') {
 
 function renderChart(key) {
   document.getElementById('chart-title').textContent = `Dataset ${key.slice(-1)}`;
-  document.getElementById('legend').hidden = false;
   info.textContent = '';
   // Keep the same scales across datasets so their positions remain comparable.
   const all = Object.values(datasets).flat();
@@ -35,8 +33,8 @@ function renderChart(key) {
     svg.append(svgElement('text', { x: 64, y: y(yv) + 4, 'text-anchor': 'end', class: 'tick' }, yv.toFixed(1)));
   }
   svg.append(svgElement('path', { d: 'M76 40 V380 H544', class: 'axis', fill: 'none' }));
-  svg.append(svgElement('text', { x: 310, y: 438, 'text-anchor': 'middle', class: 'axis-label' }, 'Centroïde spectral moyen (Hz)'));
-  svg.append(svgElement('text', { transform: 'translate(20 210) rotate(-90)', 'text-anchor': 'middle', class: 'axis-label' }, 'Loudness intégrée (LUFS)'));
+  svg.append(svgElement('text', { x: 310, y: 438, 'text-anchor': 'middle', class: 'axis-label' }, 'Spectral centroid'));
+  svg.append(svgElement('text', { transform: 'translate(20 210) rotate(-90)', 'text-anchor': 'middle', class: 'axis-label' }, 'Loudness'));
   const labelBoxes = [];
   datasets[key].forEach(sound => {
     const id = `${key}-${sound.id}`;
@@ -44,7 +42,7 @@ function renderChart(key) {
     const description = `Son ${sound.id} · ${sound.centroid.toLocaleString('fr-FR')} Hz · ${sound.loudness.toLocaleString('fr-FR')} LUFS · ${cls ? `Classe ${cls}` : 'Sans classe'}`;
     const point = svgElement('g', { class: 'point', tabindex: '0', role: 'button', 'aria-label': `Écouter ${description}`, 'data-sound': id });
     point.append(svgElement('title', {}, description));
-    point.append(svgElement('circle', { cx: x(sound.centroid), cy: y(sound.loudness), r: 7, fill: colors[cls] }));
+    point.append(svgElement('circle', { cx: x(sound.centroid), cy: y(sound.loudness), r: 7, fill: '#808080' }));
     const px = x(sound.centroid), py = y(sound.loudness);
     const candidates = [[10, -10], [10, 22], [-28, -10], [-28, 22], [10, -28], [10, 40]];
     const [dx, dy] = candidates.find(([dx, dy]) => {
@@ -83,7 +81,6 @@ function selectDataset(key) {
   else {
     chart.replaceChildren();
     document.getElementById('chart-title').textContent = 'Sélectionnez un dataset';
-    document.getElementById('legend').hidden = true;
     info.textContent = '';
   }
 }
@@ -114,12 +111,6 @@ async function init() {
         section.querySelector('ol').append(row);
       });
       document.getElementById('datasets').append(section);
-    });
-    colors.forEach((color, i) => {
-      const item = document.createElement('span');
-      item.className = 'legend-item';
-      item.innerHTML = `<span class="swatch" style="background:${color}"></span>${i ? `Classe ${i}` : 'Sans classe'}`;
-      document.getElementById('legend').append(item);
     });
     status.textContent = '';
   } catch (error) {
