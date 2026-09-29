@@ -20,7 +20,7 @@ function svgElement(tag, attrs = {}, text = '') {
 }
 
 function renderChart(key) {
-  document.getElementById('chart-title').textContent = `Dataset ${key.slice(-1)}`;
+  document.getElementById('chart-title').textContent = `Dataset ${key.replace(/^dataset/, '')}`;
   info.textContent = '';
   // Keep the same scales across datasets so their positions remain comparable.
   const all = Object.values(datasets).flat();
@@ -100,13 +100,13 @@ async function init() {
       const section = document.createElement('section');
       section.className = 'dataset';
       section.id = key;
-      section.innerHTML = `<h2><button type="button" id="heading-${key}" aria-expanded="false" aria-controls="list-${key}">Dataset ${key.slice(-1)}</button></h2><ol id="list-${key}" class="sound-list" hidden></ol>`;
+      section.innerHTML = `<h2><button type="button" id="heading-${key}" aria-expanded="false" aria-controls="list-${key}">Dataset ${key.replace(/^dataset/, '')}</button></h2><ol id="list-${key}" class="sound-list" hidden></ol>`;
       section.querySelector('button').addEventListener('click', () => selectDataset(key));
       sounds.forEach(sound => {
         const id = `${key}-${sound.id}`;
         const row = document.createElement('li');
         row.className = 'sound-row';
-        row.innerHTML = `<div><span class="sound-label" id="label-${id}">Son ${sound.id}</span><audio id="audio-${id}" controls preload="none" aria-labelledby="heading-${key} label-${id}" src="./audio/${key}/${sound.id}.wav?v=${sound.version}"></audio></div><div><label class="class-label" for="class-${id}">Classe</label><select id="class-${id}" aria-label="Classe du son ${sound.id}, dataset ${key.slice(-1)}"><option value="0">—</option>${[1, 2, 3, 4, 5].map(n => `<option value="${n}">Classe ${n}</option>`).join('')}</select></div>`;
+        row.innerHTML = `<div><span class="sound-label" id="label-${id}">Son ${sound.id}</span><audio id="audio-${id}" controls preload="none" aria-labelledby="heading-${key} label-${id}" src="./audio/${key}/${sound.id}.wav?v=${sound.version}"></audio></div><div><label class="class-label" for="class-${id}">Classe</label><select id="class-${id}" aria-label="Classe du son ${sound.id}, dataset ${key.replace(/^dataset/, '')}"><option value="0">—</option>${[1, 2, 3, 4, 5].map(n => `<option value="${n}">Classe ${n}</option>`).join('')}</select></div>`;
         row.querySelector('select').addEventListener('change', event => {
           assignments.set(id, Number(event.target.value));
           if (activeDataset === key) renderChart(key);

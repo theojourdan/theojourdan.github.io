@@ -49,6 +49,68 @@
       "loudness": -30.2
     }
   ],
+  "dataset1bis": [
+    {
+      "id": "01",
+      "version": "6aa23149ec11",
+      "centroid": 3194.97,
+      "loudness": -12.5
+    },
+    {
+      "id": "02",
+      "version": "a5ed7873a1af",
+      "centroid": 2064.03,
+      "loudness": -14.8
+    },
+    {
+      "id": "03",
+      "version": "cfe731bc6710",
+      "centroid": 2737.23,
+      "loudness": -26.6
+    },
+    {
+      "id": "04",
+      "version": "91a7fc4de417",
+      "centroid": 3330.57,
+      "loudness": -22.6
+    },
+    {
+      "id": "05",
+      "version": "c96f83f3941c",
+      "centroid": 425.56,
+      "loudness": -8.6
+    },
+    {
+      "id": "06",
+      "version": "10d0868d73eb",
+      "centroid": 3312.69,
+      "loudness": -16.2
+    },
+    {
+      "id": "07",
+      "version": "4ffd96a10b40",
+      "centroid": 2485.35,
+      "loudness": -13.0
+    },
+    {
+      "id": "08",
+      "version": "bfc962addbb4",
+      "centroid": 4419.03,
+      "loudness": -16.4
+    },
+    {
+      "id": "09",
+      "version": "ee48f15ec08d",
+      "centroid": 3344.15,
+      "loudness": -16.8
+    },
+    {
+      "id": "10",
+      "version": "72adfb82c3d3",
+      "centroid": 3692.47,
+      "loudness": -24.5
+    }
+  ],
   "dataset2": [
     {
       "id": "01",

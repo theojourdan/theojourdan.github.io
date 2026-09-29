@@ -29,7 +29,7 @@ def analyze(path):
     return {'id': path.stem, 'version': hashlib.sha256(path.read_bytes()).hexdigest()[:12], 'centroid': round(sum(values) / len(values), 2), 'loudness': integrated}
 
 if __name__ == '__main__':
-    datasets = {folder.name: [analyze(p) for p in sorted(folder.glob('*.wav'))]
+    datasets = {folder.name: [analyze(p) for p in sorted(folder.glob('[0-9][0-9].wav'))]
                 for folder in sorted((ROOT / 'audio').glob('dataset*'))}
     (ROOT / 'features.json').write_text(json.dumps(datasets, indent=2) + '\n')
     print('Analyzed', sum(map(len, datasets.values())), 'sounds')
