@@ -17,30 +17,30 @@ function svgElement(tag, attrs = {}, text = '') {
   return node;
 }
 function scatterplot(key, xFeature, yFeature, xLabel, yLabel) {
-  const all = catalog.flatMap(dataset => datasets[dataset.key]);
-  const range = feature => {
-    const values = all.map(sound => sound[feature]);
-    const min = Math.min(...values), max = Math.max(...values);
-    const padding = (max - min || Math.abs(max) || 1) * .12;
-    return [Math.max(0, min - padding), max + padding];
+  const axes = {
+    centroid: { min: 1000, max: 8000, ticks: [1000, 3000, 5000, 7000] },
+    loudness: { min: -40, max: -10, ticks: [-40, -30, -20, -10] },
+    meanFrequency: { min: 0, max: 7000, ticks: [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000] },
+    meanEnergy: { min: 0, max: .04, ticks: [0, .01, .02, .03, .04] }
   };
-  const [xmin, xmax] = range(xFeature);
-  let [ymin, ymax] = range(yFeature);
-  if (yFeature === 'loudness') {
-    const values = all.map(sound => sound[yFeature]);
-    ymin = Math.min(...values) - 3; ymax = Math.max(...values) + 3;
-  }
+  const { min: xmin, max: xmax, ticks: xticks } = axes[xFeature];
+  const { min: ymin, max: ymax, ticks: yticks } = axes[yFeature];
   const x = v => 78 + (v - xmin) / (xmax - xmin) * 430;
   const y = v => 245 - (v - ymin) / (ymax - ymin) * 215;
   const svg = svgElement('svg', { viewBox: '0 0 550 310', role: 'img', 'aria-label': `${xLabel} et ${yLabel}, ${catalog.find(d => d.key === key).label}` });
   svg.append(svgElement('desc', {}, datasets[key].map(s => `Son ${s.id} : ${xLabel} ${s[xFeature]}, ${yLabel} ${s[yFeature]}`).join('; ')));
-  const format = v => Math.abs(v) > 0 && Math.abs(v) < .01 ? v.toExponential(1) : v.toLocaleString('fr-FR', { maximumFractionDigits: Math.abs(v) < 1 ? 3 : 0 });
-  for (let i = 0; i <= 4; i++) {
-    const xv = xmin + (xmax - xmin) * i / 4, yv = ymin + (ymax - ymin) * i / 4;
-    svg.append(svgElement('line', { x1: x(xv), y1: 30, x2: x(xv), y2: 245, class: 'grid-line' }));
-    svg.append(svgElement('line', { x1: 78, y1: y(yv), x2: 508, y2: y(yv), class: 'grid-line' }));
-    svg.append(svgElement('text', { x: x(xv), y: 266, 'text-anchor': 'middle', class: 'tick' }, format(xv)));
-    svg.append(svgElement('text', { x: 68, y: y(yv) + 4, 'text-anchor': 'end', class: 'tick' }, format(yv)));
+  const format = v => v.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 2 });
+  xticks.forEach(value => {
+    svg.append(svgElement('line', { x1: x(value), y1: 30, x2: x(value), y2: 245, class: 'grid-line' }));
+    svg.append(svgElement('text', { x: x(value), y: 266, 'text-anchor': 'middle', class: 'tick' }, format(value)));
+  });
+  yticks.forEach(value => {
+    svg.append(svgElement('line', { x1: 78, y1: y(value), x2: 508, y2: y(value), class: 'grid-line' }));
+    svg.append(svgElement('text', { x: 68, y: y(value) + 4, 'text-anchor': 'end', class: 'tick' }, format(value)));
+  });
+  // Mark the upper bound when it is not an exact tick interval from the lower bound.
+  if (!xticks.includes(xmax)) {
+    svg.append(svgElement('text', { x: x(xmax), y: 266, 'text-anchor': 'middle', class: 'tick' }, format(xmax)));
   }
   svg.append(svgElement('path', { d: 'M78 30 V245 H508', class: 'axis', fill: 'none' }));
   svg.append(svgElement('text', { x: 293, y: 300, 'text-anchor': 'middle', class: 'axis-label' }, xLabel));
@@ -60,8 +60,8 @@ function renderRepresentations(dataset) {
   document.getElementById('chart-title').textContent = dataset.label;
   representations.replaceChildren();
   const plots = [
-    ['Example 1', 'centroid', 'loudness', 'Centroid Mean', 'Loudness Mean'],
-    ['Example 2', 'meanFrequency', 'meanEnergy', 'Frequency Mean', 'Energy Mean']
+    ['Example 1', 'centroid', 'loudness', 'Centroid Mean (Hz)', 'Loudness Mean (LUFS)'],
+    ['Example 2', 'meanFrequency', 'meanEnergy', 'Frequency Mean (Hz)', 'Energy Mean (a.u.)']
   ];
   plots.forEach(([title,xf,yf,xl,yl]) => {
     const section = document.createElement('section');
