@@ -1,168 +1,74 @@
 {
-  "dataset1": [
-    {
-      "id": "01",
-      "version": "ee9617f5b97b",
-      "centroid": 854.62,
-      "loudness": -19.6
-    },
-    {
-      "id": "02",
-      "version": "1203b238bf3b",
-      "centroid": 2759.34,
-      "loudness": -21.7
-    },
-    {
-      "id": "03",
-      "version": "32921404f4a2",
-      "centroid": 6661.38,
-      "loudness": -34.2
-    },
-    {
-      "id": "04",
-      "version": "664e6edb77f5",
-      "centroid": 5028.29,
-      "loudness": -23.8
-    },
-    {
-      "id": "05",
-      "version": "eea3dcb75092",
-      "centroid": 3237.97,
-      "loudness": -31.6
-    },
-    {
-      "id": "06",
-      "version": "6f02bc995951",
-      "centroid": 3251.91,
-      "loudness": -23.7
-    },
-    {
-      "id": "07",
-      "version": "317fc899d4d6",
-      "centroid": 3219.13,
-      "loudness": -23.5
-    },
-    {
-      "id": "08",
-      "version": "637012065954",
-      "centroid": 2112.94,
-      "loudness": -30.2
-    }
-  ],
-  "dataset1bis": [
-    {
-      "id": "01",
-      "version": "6aa23149ec11",
-      "centroid": 3194.97,
-      "loudness": -12.5
-    },
-    {
-      "id": "02",
-      "version": "a5ed7873a1af",
-      "centroid": 2064.03,
-      "loudness": -14.8
-    },
-    {
-      "id": "03",
-      "version": "cfe731bc6710",
-      "centroid": 2737.23,
-      "loudness": -26.6
-    },
-    {
-      "id": "04",
-      "version": "91a7fc4de417",
-      "centroid": 3330.57,
-      "loudness": -22.6
-    },
-    {
-      "id": "05",
-      "version": "c96f83f3941c",
-      "centroid": 425.56,
-      "loudness": -8.6
-    },
-    {
-      "id": "06",
-      "version": "10d0868d73eb",
-      "centroid": 3312.69,
-      "loudness": -16.2
-    },
-    {
-      "id": "07",
-      "version": "4ffd96a10b40",
-      "centroid": 2485.35,
-      "loudness": -13.0
-    },
-    {
-      "id": "08",
-      "version": "bfc962addbb4",
-      "centroid": 4419.03,
-      "loudness": -16.4
-    },
-    {
-      "id": "09",
-      "version": "ee48f15ec08d",
-      "centroid": 3344.15,
-      "loudness": -16.8
-    },
-    {
-      "id": "10",
-      "version": "72adfb82c3d3",
-      "centroid": 3692.47,
-      "loudness": -24.5
-    }
-  ],
   "dataset2": [
     {
       "id": "01",
       "version": "dbe20b38a04a",
+      "meanFrequency": 429.6,
+      "meanEnergy": 0.010670525640487837,
       "centroid": 2156.22,
       "loudness": -17.5
     },
     {
       "id": "02",
       "version": "b1c0272f7f31",
+      "meanFrequency": 2608.53,
+      "meanEnergy": 0.0030157357776003308,
       "centroid": 5672.0,
       "loudness": -20.4
     },
     {
       "id": "03",
       "version": "a216503b65a1",
+      "meanFrequency": 5501.29,
+      "meanEnergy": 0.00020517706651830995,
       "centroid": 6835.26,
       "loudness": -31.1
     },
     {
       "id": "04",
       "version": "dfb87959363c",
+      "meanFrequency": 1518.27,
+      "meanEnergy": 0.004424954423976337,
       "centroid": 3215.68,
       "loudness": -19.3
     },
     {
       "id": "05",
       "version": "c0a43e2aef5d",
+      "meanFrequency": 1249.13,
+      "meanEnergy": 0.0013672287335695621,
       "centroid": 2918.9,
       "loudness": -25.0
     },
     {
       "id": "06",
       "version": "828b1fe18de2",
+      "meanFrequency": 1536.08,
+      "meanEnergy": 0.00040364134925174443,
       "centroid": 3797.42,
       "loudness": -29.8
     },
     {
       "id": "07",
       "version": "56c59bf75fe0",
+      "meanFrequency": 516.65,
+      "meanEnergy": 0.0008951967141642401,
       "centroid": 2193.28,
       "loudness": -28.1
     },
     {
       "id": "08",
       "version": "e13bcff380d1",
+      "meanFrequency": 472.74,
+      "meanEnergy": 0.00084229242890511,
       "centroid": 2844.32,
       "loudness": -29.5
     },
     {
       "id": "09",
       "version": "637fa8655f93",
+      "meanFrequency": 1547.14,
+      "meanEnergy": 0.0005534377497404362,
       "centroid": 3838.32,
       "loudness": -28.4
     }
@@ -171,54 +77,72 @@
     {
       "id": "01",
       "version": "eeffb1d5aded",
+      "meanFrequency": 6365.93,
+      "meanEnergy": 0.0020797274055346826,
       "centroid": 6352.02,
       "loudness": -23.4
     },
     {
       "id": "02",
       "version": "dc0456b8b9f9",
+      "meanFrequency": 1881.02,
+      "meanEnergy": 0.001599437994765867,
       "centroid": 3230.62,
       "loudness": -23.5
     },
     {
       "id": "03",
       "version": "987a39ddae32",
+      "meanFrequency": 2814.4,
+      "meanEnergy": 0.0007182496497843582,
       "centroid": 3978.18,
       "loudness": -27.6
     },
     {
       "id": "04",
       "version": "4ab07955e83f",
+      "meanFrequency": 2621.94,
+      "meanEnergy": 0.0025866789352317265,
       "centroid": 4036.33,
       "loudness": -23.4
     },
     {
       "id": "05",
       "version": "68f00d91982a",
+      "meanFrequency": 2323.04,
+      "meanEnergy": 8.382240989631677e-05,
       "centroid": 3986.53,
       "loudness": -36.5
     },
     {
       "id": "06",
       "version": "c7fee3c71bd5",
+      "meanFrequency": 4621.16,
+      "meanEnergy": 0.001686984807920022,
       "centroid": 6738.53,
       "loudness": -24.4
     },
     {
       "id": "07",
       "version": "f8547a77956a",
+      "meanFrequency": 2817.93,
+      "meanEnergy": 0.001182225566280482,
       "centroid": 2662.66,
       "loudness": -26.6
     },
     {
       "id": "08",
       "version": "87f21c75e304",
+      "meanFrequency": 3043.67,
+      "meanEnergy": 0.00022107492855766146,
       "centroid": 4512.96,
       "loudness": -35.1
     },
     {
       "id": "09",
       "version": "debc33c1ebfc",
+      "meanFrequency": 6368.43,
+      "meanEnergy": 0.0007883630299908631,
       "centroid": 6808.93,
       "loudness": -27.0
     }
@@ -227,72 +151,96 @@
     {
       "id": "01",
       "version": "75593626af3a",
+      "meanFrequency": 966.37,
+      "meanEnergy": 0.00194688669233214,
       "centroid": 2143.29,
       "loudness": -23.6
     },
     {
       "id": "02",
       "version": "4ca5c1297ddb",
+      "meanFrequency": 900.37,
+      "meanEnergy": 0.0013965557473642753,
       "centroid": 2770.4,
       "loudness": -25.0
     },
     {
       "id": "03",
       "version": "3d0a31558b8e",
+      "meanFrequency": 1531.22,
+      "meanEnergy": 0.003513067385165704,
       "centroid": 3452.01,
       "loudness": -21.8
     },
     {
       "id": "04",
       "version": "6b2da56e4885",
+      "meanFrequency": 1342.34,
+      "meanEnergy": 0.007197638311452009,
       "centroid": 2619.98,
       "loudness": -16.0
     },
     {
       "id": "05",
       "version": "b949634df3e7",
+      "meanFrequency": 219.76,
+      "meanEnergy": 0.03353445192197279,
       "centroid": 3110.62,
       "loudness": -14.8
     },
     {
       "id": "06",
       "version": "b247eb561a2b",
+      "meanFrequency": 1994.55,
+      "meanEnergy": 0.002891823811563585,
       "centroid": 3606.51,
       "loudness": -19.6
     },
     {
       "id": "07",
       "version": "9324649d8f30",
+      "meanFrequency": 719.24,
+      "meanEnergy": 0.00019200642242742831,
       "centroid": 2026.88,
       "loudness": -34.0
     },
     {
       "id": "08",
       "version": "a72be0bfe05b",
+      "meanFrequency": 902.07,
+      "meanEnergy": 0.01692196373575128,
       "centroid": 1906.31,
       "loudness": -14.3
     },
     {
       "id": "09",
       "version": "d8db58c089c9",
+      "meanFrequency": 2308.57,
+      "meanEnergy": 0.002230969213774611,
       "centroid": 3284.14,
       "loudness": -20.9
     },
     {
       "id": "10",
       "version": "b02d42b2ebe3",
+      "meanFrequency": 1044.36,
+      "meanEnergy": 0.0005154212235699575,
       "centroid": 2186.02,
       "loudness": -29.3
     },
     {
       "id": "11",
       "version": "118ffe5844b5",
+      "meanFrequency": 2194.46,
+      "meanEnergy": 0.0018219335259994736,
       "centroid": 4965.92,
       "loudness": -21.2
     },
     {
       "id": "12",
       "version": "1c71d19182fd",
+      "meanFrequency": 1149.23,
+      "meanEnergy": 0.021688301516080612,
       "centroid": 2252.25,
       "loudness": -12.5
     }
