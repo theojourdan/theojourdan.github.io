@@ -1,9 +1,9 @@
 'use strict';
 // Original audio directories stay stable; only the participant-facing labels change.
 const catalog = [
-  { key: 'dataset2', label: 'Dataset 1', description: 'Field recording — Une même situation (dans une ville, des enfants jouent au ballon sur une place avec une fontaine) a été enregistrée depuis différents points géographiques ou points de vue.' },
-  { key: 'dataset3', label: 'Dataset 2', description: 'Modèle IA — Sons extraits d’un modèle RAVE d’oiseaux par exploration directe de l’espace latent, exploration locale à partir d’un son de la base de données, ou transfert de timbre à partir d’un son extérieur à cette base.' },
-  { key: 'dataset4', label: 'Dataset 3', description: 'Pratique performative — Différentes façons de produire du son avec un violon.' }
+  { key: 'dataset2', label: 'Dataset 1', description: 'An artist working with field recording recorded a series of sounds from an environment.' },
+  { key: 'dataset4', label: 'Dataset 2', description: 'A violinist recorded sounds based on different musical practices and gestures using their instrument.' },
+  { key: 'dataset3', label: 'Dataset 3', description: 'An artist resampled a sound synthesis model (RAVE)' }
 ];
 const assignments = new Map();
 let datasets;
@@ -60,8 +60,8 @@ function renderRepresentations(dataset) {
   document.getElementById('chart-title').textContent = dataset.label;
   representations.replaceChildren();
   const plots = [
-    ['Exemple 1', 'centroid', 'loudness', 'Spectral centroid', 'Loudness'],
-    ['Exemple 2', 'meanFrequency', 'meanEnergy', 'Fréquence moyenne (Hz)', 'Énergie moyenne']
+    ['Example 1', 'centroid', 'loudness', 'Centroid Mean', 'Loudness Mean'],
+    ['Example 2', 'meanFrequency', 'meanEnergy', 'Frequency Mean', 'Energy Mean']
   ];
   plots.forEach(([title,xf,yf,xl,yl]) => {
     const section = document.createElement('section');
@@ -71,7 +71,7 @@ function renderRepresentations(dataset) {
     representations.append(section);
   });
   const section = document.createElement('section'); section.className = 'example';
-  section.innerHTML = '<h3>Exemple 3 — Classes</h3><table><caption class="sr-only">Classes des sons du dataset sélectionné</caption><thead><tr><th scope="col">Son</th><th scope="col">Classe</th></tr></thead><tbody></tbody></table>';
+  section.innerHTML = '<h3>Example 3</h3><table><caption class="sr-only">Classes des sons du dataset sélectionné</caption><thead><tr><th scope="col">Son</th><th scope="col">Classe</th></tr></thead><tbody></tbody></table>';
   datasets[dataset.key].forEach(sound => {
     const id = `${dataset.key}-${sound.id}`;
     const row = document.createElement('tr');
