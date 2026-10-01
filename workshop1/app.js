@@ -8,6 +8,16 @@ const catalog = [
 const assignments = new Map();
 let datasets;
 let activeDataset = null;
+let step2Visible = false;
+const step2Button = document.getElementById('step2-button');
+step2Button.addEventListener('click', () => {
+  step2Visible = true;
+  document.getElementById('visual-examples').hidden = false;
+  step2Button.setAttribute('aria-expanded', 'true');
+  step2Button.hidden = true;
+  if (activeDataset) renderRepresentations(catalog.find(dataset => dataset.key === activeDataset));
+  document.getElementById('chart-title').focus({ preventScroll: true });
+});
 const representations = document.getElementById('representations');
 const status = document.getElementById('status');
 function svgElement(tag, attrs = {}, text = '') {
@@ -90,7 +100,7 @@ function selectDataset(dataset) {
     section.querySelector('button').setAttribute('aria-expanded',String(open));
     section.querySelector('.dataset-content').hidden = !open;
   });
-  if (activeDataset) renderRepresentations(dataset);
+  if (activeDataset && step2Visible) renderRepresentations(dataset);
   else { representations.replaceChildren(); document.getElementById('chart-title').textContent = 'Sélectionnez un dataset'; }
 }
 async function init() {

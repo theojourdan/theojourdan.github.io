@@ -16,10 +16,13 @@
 
   <div class="workspace">
     <div id="datasets" aria-label="Datasets"></div>
-    <section class="chart-panel" aria-labelledby="chart-title">
-      <h2 id="chart-title">Sélectionnez un dataset</h2>
-      <div id="representations"></div>
-    </section>
+    <div class="visual-column">
+      <button id="step2-button" type="button" aria-expanded="false" aria-controls="visual-examples">Click when Step 2</button>
+      <section id="visual-examples" class="chart-panel" aria-labelledby="chart-title" hidden>
+        <h2 id="chart-title" tabindex="-1">Sélectionnez un dataset</h2>
+        <div id="representations"></div>
+      </section>
+    </div>
   </div>
   <p id="status" role="status">Chargement…</p>
   <noscript>Activez JavaScript pour afficher les sons et le graphique.</noscript>
